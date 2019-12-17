@@ -1,0 +1,12 @@
+data = input()
+result = []
+current = ""
+for c in data:
+  if c.isalpha():
+    current += c
+  elif len(current) > 0:
+    result.append(current)
+    current = ""
+if len(current) > 0:
+  result.append(current)
+print(result)
