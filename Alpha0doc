@@ -1,4 +1,4 @@
-data = input() # input of any data such as sentence, row of symbolsб etc
+data = input() # input of any data such as sentence, row of symbols, etc
 result = [] # making an empty list where elements will be
 current = "" # current input we deal with (NOT data)
 for c in data:
