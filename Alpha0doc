@@ -1,37 +1,32 @@
-data = input() # input of any data such as sentence, row of symbols, etc
-result = [] # making an empty list where elements will be
-current = "" # current input we deal with (NOT data)
-for c in data:
-        """Start a cycle 'for'.
+s = input()
+i = 0
+result = [] 
+if len(s) == 0:
+    result = []
     
-        c - is an element in the data we input earlier.
+# check if obj is/isn`t alpha
+for a,b in enumerate(s):
     
-        """
-    if c.isalpha(): # return 'True' if element of string is letter
-        """In cycle make condition if.
+    if b.isalpha():
+    # the beginning of the substring
+    # can be the first char in string
+    # or if not, the first alpha
+    # that code can find in string
+    # (previous is not alpha)
     
-        So if element is letter, we move forward.
-    
-        str.isalpha() - bool, return 'True' if all elements are letters. If not - return 'False'.
-    
-        """
-        current += c # move to the next element
-    elif len(current) > 0:
-        """In cycle make another condition if the first one is not suitable by elif.
-        
-        If in 'current' there are more than 0 elements, we put 'current' in the list 'result' and update 'current'.
-        
-        len(obj) - is an amount of elements we have at this very moment.
-    
-        """  
-        result.append(current) # put current in the list result
-        current = "" # current input we deal with (NOT data)
-"""The cycle is finished."""
-if len(current) > 0:
-    """If in 'current' there are more than 0 elements, we put 'current' in the list 'result' and update 'current'.
-    
-    Works ONLY after cycle.
-    
-    """
-    result.append(current) # put current in the list result
-print(result) # print list 'result' on the screen
+        if a == 0 or not s[a-1].isalpha():
+            i = a
+    else:
+        i = a + 1
+    # if it is not the last char in the string    
+    if (a+1 <= len(s)-1):
+        # code finds the end of substring
+        # and adds it to list
+        if b.isalpha() and not s[a+1].isalpha():
+            result.append(s[i:a+1])
+# code goes till the end of the string
+# and if the last one is alpha adds it
+if b.isalpha():
+    result.append(s[i:])
+
+print(result)
