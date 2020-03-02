@@ -5,7 +5,7 @@ to tokenize an input string
 class Tokenizer(object):
     """This class has method to tokenize an input string"""
     def tokenize(self,s):
-    """This function divides a string in a list of alphabetical substrings."""
+        """This function divides a string in a list of alphabetical substrings."""
         i = 0
         result = [] 
         if len(s) == 0:
